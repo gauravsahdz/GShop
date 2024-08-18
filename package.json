@@ -9,6 +9,12 @@
     "start": "react-native start",
     "test": "jest"
   },
+  "line-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native": "^6.1.18",
