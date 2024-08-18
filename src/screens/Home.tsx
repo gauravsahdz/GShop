@@ -1,10 +1,28 @@
-import React from 'react'
-import { Text } from 'react-native'
+import React, { useState } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import BottomSheet from '../components/BottomSheet';
+import MyButton from '../components/MyButton';
 
 const Home = () => {
-  return (
-    <Text>Home</Text>
-  )
-}
+  const [isVisible, setIsVisible] = useState(false);
+  const onPressMe = () => {
+    setIsVisible(!isVisible);
+  };
 
-export default Home
+  return (
+    <GestureHandlerRootView>
+      <MyButton
+        title="Press me"
+        btnStyle={{
+          backgroundColor: '#DB3022',
+          height: 48,
+          width: 343,
+        }}
+        onPress={onPressMe}
+      />
+      <BottomSheet isVisible={isVisible} />
+    </GestureHandlerRootView>
+  );
+};
+
+export default Home;
