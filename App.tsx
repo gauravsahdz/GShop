@@ -76,7 +76,7 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Gaurav">
+          <Section title="Gaurav Sah">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
+    fontFamily: 'Poppins-Regular'
   },
   highlight: {
     fontWeight: '700',
