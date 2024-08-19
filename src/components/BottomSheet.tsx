@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
   useAnimatedStyle,
@@ -13,9 +13,13 @@ const MIN_TRANSLATE_Y = SCREEN_HEIGHT / 5;
 
 type BottomsheetProps = {
   isVisible: boolean;
+  children: React.ReactNode;
 };
 
-export default function Bottomsheet({ isVisible = false }: BottomsheetProps) {
+export default function Bottomsheet({
+  isVisible = false,
+  children,
+}: BottomsheetProps) {
   const translateY = useSharedValue(0);
   const context = useSharedValue({ y: 0 });
 
@@ -67,7 +71,7 @@ export default function Bottomsheet({ isVisible = false }: BottomsheetProps) {
       <Animated.View
         style={[styles.bottomsheet_container, reanimatedBottomStyle]}>
         <View style={styles.line} />
-        <Text>Bottomsheet</Text>
+        {children}
       </Animated.View>
     </GestureDetector>
   );

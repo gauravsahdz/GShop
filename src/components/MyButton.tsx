@@ -20,7 +20,7 @@ const MyButton = ({ title, onPress, btnStyle }: MyButtonProps) => {
         <Text
           style={{
             color: 'white',
-            fontFamily: 'Poppins-Medium',
+            fontFamily: 'Poppins Medium',
             fontSize: 14,
           }}>
           {title}
