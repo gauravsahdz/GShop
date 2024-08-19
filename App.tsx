@@ -14,10 +14,10 @@ function App(): React.JSX.Element {
     <GestureHandlerRootView>
       <NavigationContainer>
         <Tab.Navigator>
+          <Tab.Screen name="Components" component={ComponentsScreen} />
           <Tab.Screen name="Home" component={Home} />
           <Tab.Screen name="Bag" component={Bag} />
           <Tab.Screen name="Profile" component={Profile} />
-          <Tab.Screen name="Components" component={ComponentsScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>

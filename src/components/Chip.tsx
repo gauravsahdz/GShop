@@ -15,7 +15,6 @@ const Chip = ({ label, chipStyle, textStyle }: ChipProps) => {
           backgroundColor: '#DB3022',
           borderRadius: 29,
           padding: 8,
-          margin: 5,
           width: 100,
           alignItems: 'center',
           ...chipStyle,
