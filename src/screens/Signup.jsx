@@ -1,3 +1,4 @@
+import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import RedArrowRight from '../../assets/icons/red_arrow_right.svg';
 import MyButton from '../components/Buttons/MyButton';

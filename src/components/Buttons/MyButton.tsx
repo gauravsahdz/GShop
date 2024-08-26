@@ -15,6 +15,9 @@ const MyButton = ({ title, onPress, btnStyle }: MyButtonProps) => {
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: 25,
+          backgroundColor: '#DB3022',
+          height: 48,
+          width: 343,
           ...btnStyle,
         }}>
         <Text

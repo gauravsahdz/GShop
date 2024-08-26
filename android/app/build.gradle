@@ -102,12 +102,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-        // release {
-        //     storeFile file('GShop.keystore')
-        //     storePassword readConsoleInput("\nKeystore password:")
-        //     keyAlias readConsoleInput("\nAlias: ")
-        //     keyPassword readConsoleInput("\nAlias password: ")
-        // }
+        release {
+            storeFile file('GShop.keystore')
+            storePassword readConsoleInput("\nKeystore password:")
+            keyAlias readConsoleInput("\nAlias: ")
+            keyPassword readConsoleInput("\nAlias password: ")
+        }
     }
     buildTypes {
         debug {

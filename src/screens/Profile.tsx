@@ -2,7 +2,13 @@ import React from 'react';
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import ChevronRight from '../../assets/icons/chevron_right.svg';
 
-const menus = [
+type MenuItem = {
+  title: string;
+  subtitle: string;
+  onPress?: (navigation: any) => void;
+};
+
+const menus: MenuItem[] = [
   {
     title: 'My Orders',
     subtitle: 'Already have 12 orders',
@@ -30,7 +36,7 @@ const menus = [
   {
     title: 'Log out',
     subtitle: 'Logout from the app',
-    onPress: (navigation: any) => {
+    onPress: navigation => {
       navigation.navigate('Signup');
     },
   },

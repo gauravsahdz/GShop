@@ -11,5 +11,12 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   // dont want react/prop-types
-  { rules: { "react/prop-types": "off" } },
+  {
+    rules: {
+      "react/prop-types": "off",
+      //no explicit any - off
+      "@typescript-eslint/no-explicit-any": "off",
+
+    }
+  },
 ];
