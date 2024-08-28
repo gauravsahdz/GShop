@@ -29,6 +29,7 @@ function Tabs() {
           tabBarIcon: ({ color, size }) => (
             <BottomHomeIcon width={size} height={size} fill={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -39,6 +40,7 @@ function Tabs() {
           tabBarIcon: ({ color, size }) => (
             <BottomCartIcon width={size} height={size} fill={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -49,6 +51,7 @@ function Tabs() {
           tabBarIcon: ({ color, size }) => (
             <BottomBag width={size} height={size} fill={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -59,6 +62,7 @@ function Tabs() {
           tabBarIcon: ({ color, size }) => (
             <BottomFavoritesIcon width={size} height={size} fill={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -69,6 +73,7 @@ function Tabs() {
           tabBarIcon: ({ color, size }) => (
             <BottomProfileIcon width={size} height={size} fill={color} />
           ),
+          headerShown: false,
         }}
       />
     </Tab.Navigator>
