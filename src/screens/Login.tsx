@@ -4,7 +4,7 @@ import RedArrowRight from '../../assets/icons/red_arrow_right.svg';
 import MyButton from '../components/Buttons/MyButton';
 import MyInputField from '../components/MyInputField';
 
-const Signup = () => {
+const Login = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Sign up</Text>
@@ -66,12 +66,16 @@ const styles = {
   },
   signupForm: {
     marginTop: 20,
-    display: 'flex',
     gap: 10,
   },
   formGroup: {
     gap: 5,
   },
+  label: {
+    fontFamily: 'Poppins Medium',
+    fontSize: 14,
+    color: '#222',
+  },
 };
 
-export default Signup;
+export default Login;

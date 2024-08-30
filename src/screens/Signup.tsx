@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import RedArrowRight from '../../assets/icons/red_arrow_right.svg';
@@ -5,26 +6,28 @@ import MyButton from '../components/Buttons/MyButton';
 import MyInputField from '../components/MyInputField';
 
 const Signup = () => {
+  const navigation: any = useNavigation();
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Sign up</Text>
       <View style={styles.signupForm}>
         <View style={styles.formGroup}>
-          <Text>Name</Text>
+          <Text style={styles.label}>Name</Text>
           <MyInputField placeholder="Name" />
         </View>
 
         <View style={styles.formGroup}>
-          <Text>Email</Text>
+          <Text style={styles.label}>Email</Text>
           <MyInputField placeholder="Email" />
         </View>
 
         <View style={styles.formGroup}>
-          <Text>Password</Text>
+          <Text style={styles.label}>Password</Text>
           <MyInputField placeholder="Password" />
         </View>
 
         <TouchableOpacity
+          onPress={() => navigation.navigate('Login')}
           style={{
             display: 'flex',
             flexDirection: 'row',
@@ -70,6 +73,11 @@ const styles = {
   },
   formGroup: {
     gap: 5,
+  },
+  label: {
+    fontFamily: 'Poppins Medium',
+    fontSize: 14,
+    color: '#222',
   },
 };
 
