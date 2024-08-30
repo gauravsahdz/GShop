@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import useTheme from '../../hooks/useTheme';
 
 type MyButtonProps = {
   title: string;
@@ -8,6 +9,8 @@ type MyButtonProps = {
 };
 
 const MyButton = ({ title, onPress, btnStyle }: MyButtonProps) => {
+  const { typography } = useTheme();
+
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
       <View
@@ -17,14 +20,13 @@ const MyButton = ({ title, onPress, btnStyle }: MyButtonProps) => {
           borderRadius: 25,
           backgroundColor: '#DB3022',
           height: 48,
-          width: 343,
           ...btnStyle,
         }}>
         <Text
           style={{
             color: 'white',
             fontFamily: 'Poppins Medium',
-            fontSize: 14,
+            fontSize: typography.size.S,
           }}>
           {title}
         </Text>

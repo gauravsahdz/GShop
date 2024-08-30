@@ -7,6 +7,7 @@ import RoundButton from '../components/Buttons/RoundButton';
 import CategoryCard from '../components/Cards/CategoryCard';
 import ProductCard from '../components/Cards/ProductCard';
 import Chip from '../components/Chip';
+import useTheme from '../hooks/useTheme';
 
 const data = {
   title: 'Product 1',
@@ -20,6 +21,7 @@ const data = {
 };
 
 const ComponentsScreen = () => {
+  const { colors } = useTheme();
   const [isVisible, setIsVisible] = useState(false);
   const onPressMe = () => {
     setIsVisible(!isVisible);
@@ -36,7 +38,7 @@ const ComponentsScreen = () => {
       <MyButton
         title="Button"
         btnStyle={{
-          backgroundColor: '#DB3022',
+          backgroundColor: colors.primary,
           height: 48,
           width: 343,
         }}
