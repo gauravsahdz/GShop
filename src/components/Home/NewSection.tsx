@@ -106,7 +106,7 @@ const NewSection = () => {
       <View style={styles.header}>
         <View style={styles.infoSection}>
           <Text style={styles.headerText}>New Section</Text>
-          <Text style={styles.subText}>You've never seen it before!</Text>
+          <Text style={styles.subText}>You&apos;ve never seen it before!</Text>
         </View>
         <TouchableOpacity style={styles.btn}>
           <Text style={styles.btnText}>View all</Text>

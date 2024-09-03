@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import BannerImage from '../../../assets/images/banner.png';
 import useTheme from '../../hooks/useTheme';
 import MyButton from '../Buttons/MyButton';
 
@@ -41,10 +42,7 @@ const BannerSection = () => {
   });
   return (
     <View style={styles.bannerSection}>
-      <Image
-        source={require('../../../assets/images/banner.png')}
-        style={styles.bannerImage}
-      />
+      <Image source={BannerImage} style={styles.bannerImage} />
       <View style={styles.gradientOverlay} />
       <View style={styles.overlay}>
         <Text style={styles.bannerText}>Fashion Sale</Text>
