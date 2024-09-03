@@ -1,6 +1,14 @@
 import React from 'react';
-import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import ChevronRight from '../../assets/icons/chevron_right.svg';
+import useTheme from '../hooks/useTheme';
 
 type MenuItem = {
   title: string;
@@ -37,7 +45,7 @@ const menus: MenuItem[] = [
     title: 'Log out',
     subtitle: 'Logout from the app',
     onPress: navigation => {
-      navigation.navigate('Signup');
+      navigation.navigate('Login');
     },
   },
 ];
@@ -47,6 +55,41 @@ type ProfileProps = {
 };
 
 const Profile = ({ navigation }: ProfileProps) => {
+  const { typography } = useTheme();
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 10,
+    },
+    headerText: {
+      fontSize: typography.size['3XL'],
+      marginBottom: 10,
+      fontFamily: 'Poppins Bold',
+      color: '#222',
+      paddingLeft: 14,
+    },
+    menuTitle: {
+      fontSize: typography.size.M,
+      color: '#222',
+      fontFamily: 'Poppins SemiBold',
+    },
+    menuSubtitle: {
+      fontSize: typography.size.XS,
+      color: '#666',
+      fontFamily: 'Poppins Regular',
+    },
+    menu: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      borderBottomWidth: 0.5,
+      borderBottomColor: '#e0e0e0',
+      paddingVertical: 18,
+      paddingLeft: 15,
+    },
+  });
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.headerText}>My Profile</Text>
@@ -69,7 +112,7 @@ const Profile = ({ navigation }: ProfileProps) => {
           }}>
           <Text
             style={{
-              fontSize: 18,
+              fontSize: typography.size.L,
               fontFamily: 'Poppins SemiBold',
               color: '#222',
             }}>
@@ -77,7 +120,7 @@ const Profile = ({ navigation }: ProfileProps) => {
           </Text>
           <Text
             style={{
-              fontSize: 14,
+              fontSize: typography.size.S,
               fontFamily: 'Poppins Medium',
             }}>
             john@gmail.com
@@ -90,15 +133,7 @@ const Profile = ({ navigation }: ProfileProps) => {
           <TouchableOpacity
             activeOpacity={0.8}
             key={index}
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              borderBottomWidth: 0.5,
-              borderBottomColor: '#e0e0e0',
-              paddingVertical: 18,
-              paddingLeft: 15,
-            }}
+            style={styles.menu}
             onPress={() => {
               if (menu.onPress) {
                 menu.onPress(navigation);
@@ -114,31 +149,6 @@ const Profile = ({ navigation }: ProfileProps) => {
       </View>
     </ScrollView>
   );
-};
-
-const styles = {
-  container: {
-    flex: 1,
-    padding: 10,
-  },
-  headerText: {
-    fontSize: 34,
-    marginBottom: 10,
-    fontFamily: 'Poppins Bold',
-    color: '#222',
-    paddingLeft: 14,
-  },
-  menu: {},
-  menuTitle: {
-    fontSize: 16,
-    color: '#222',
-    fontFamily: 'Poppins SemiBold',
-  },
-  menuSubtitle: {
-    fontSize: 11,
-    color: '#666',
-    fontFamily: 'Poppins Regular',
-  },
 };
 
 export default Profile;

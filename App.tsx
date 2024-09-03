@@ -6,6 +6,8 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaView, StatusBar } from 'react-native';
 import ThemeProvider from './src/context/ThemeProvider';
 import Tabs from './src/navigators/TabsNavigator';
+import ForgotPassword from './src/screens/ForgotPasswod';
+import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
 
 const Stack = createNativeStackNavigator();
@@ -35,6 +37,20 @@ function App() {
               <Stack.Screen
                 name="Signup"
                 component={Signup}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Login"
+                component={Login}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="ForgotPassword"
+                component={ForgotPassword}
                 options={{
                   headerShown: false,
                 }}

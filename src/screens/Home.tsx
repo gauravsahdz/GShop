@@ -1,8 +1,15 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import BannerSection from '../components/Home/BannerSection';
+import NewSection from '../components/Home/NewSection';
 
 const Home = () => {
-  return <Text>Hi there</Text>;
+  return (
+    <ScrollView>
+      <BannerSection />
+      <NewSection />
+    </ScrollView>
+  );
 };
 
 export default Home;

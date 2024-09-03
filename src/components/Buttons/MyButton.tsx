@@ -9,16 +9,16 @@ type MyButtonProps = {
 };
 
 const MyButton = ({ title, onPress, btnStyle }: MyButtonProps) => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
 
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+    <TouchableOpacity onPress={onPress} activeOpacity={0.9}>
       <View
         style={{
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: 25,
-          backgroundColor: '#DB3022',
+          backgroundColor: colors.primary,
           height: 48,
           ...btnStyle,
         }}>

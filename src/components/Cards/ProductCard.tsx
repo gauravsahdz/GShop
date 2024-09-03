@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, Text, View } from 'react-native';
 import HeartOutline from '../../../assets/icons/Heart_Outline.svg';
 import StarIcon from '../../../assets/icons/Star.svg';
+import useTheme from '../../hooks/useTheme';
 import RoundButton from '../Buttons/RoundButton';
 
 type ProductCardProps = {
@@ -14,15 +15,18 @@ type ProductCardProps = {
     category: string;
     oldPrice: number;
   };
+  style?: object;
 };
 
-const ProductCard = ({ props }: ProductCardProps) => {
+const ProductCard = ({ props, style }: ProductCardProps) => {
+  const { typography } = useTheme();
   return (
     <View
       style={{
         backgroundColor: 'white',
         borderRadius: 10,
         padding: 1,
+        ...style,
       }}>
       <View
         style={{
@@ -37,7 +41,7 @@ const ProductCard = ({ props }: ProductCardProps) => {
         <Text
           style={{
             fontFamily: 'Poppins SemiBold',
-            fontSize: 11,
+            fontSize: typography.size.XS,
             color: 'white',
           }}>
           {-(props.price / props.oldPrice) * 100}%
@@ -75,7 +79,7 @@ const ProductCard = ({ props }: ProductCardProps) => {
           <Text
             style={{
               fontFamily: 'Poppins Regular',
-              fontSize: 10,
+              fontSize: typography.size.XXS,
               color: '#9B9B9B',
             }}>
             ({props.totalRatings})
@@ -84,7 +88,7 @@ const ProductCard = ({ props }: ProductCardProps) => {
         <Text
           style={{
             fontFamily: 'Poppins Regular',
-            fontSize: 11,
+            fontSize: typography.size.XS,
             color: '#9B9B9B',
           }}>
           {props.category}
@@ -92,7 +96,7 @@ const ProductCard = ({ props }: ProductCardProps) => {
         <Text
           style={{
             fontFamily: 'Poppins SemiBold',
-            fontSize: 16,
+            fontSize: typography.size.M,
             color: '#222222',
           }}>
           {props.title}
@@ -101,7 +105,7 @@ const ProductCard = ({ props }: ProductCardProps) => {
           <Text
             style={{
               fontFamily: 'Poppins Medium',
-              fontSize: 14,
+              fontSize: typography.size.S,
               color: '#9B9B9B',
               textDecorationLine: 'line-through',
             }}>
@@ -110,7 +114,7 @@ const ProductCard = ({ props }: ProductCardProps) => {
           <Text
             style={{
               fontFamily: 'Poppins Medium',
-              fontSize: 14,
+              fontSize: typography.size.S,
               color: '#DB3022',
             }}>
             {props.price}$

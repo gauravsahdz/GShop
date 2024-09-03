@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextInput } from 'react-native';
+import useTheme from '../hooks/useTheme';
 
 type MyInputFieldProps = {
   placeholder?: string;
@@ -8,11 +9,13 @@ type MyInputFieldProps = {
 const MyInputField = ({
   placeholder = 'Enter your name',
 }: MyInputFieldProps) => {
+  const { typography } = useTheme();
+
   return (
     <TextInput
       style={{
         fontFamily: 'Poppins Medium',
-        fontSize: 14,
+        fontSize: typography.size.S,
         elevation: 1,
         shadowColor: '#000',
         shadowOffset: {

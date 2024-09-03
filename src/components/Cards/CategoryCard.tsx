@@ -1,7 +1,10 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
+import useTheme from '../../hooks/useTheme';
 
 const CategoryCard = () => {
+  const { typography } = useTheme();
+
   return (
     <View
       style={{
@@ -16,7 +19,7 @@ const CategoryCard = () => {
       <Text
         style={{
           fontFamily: 'Poppins SemiBold',
-          fontSize: 18,
+          fontSize: typography.size.L,
           color: '#222222',
           marginLeft: 23,
         }}>

@@ -1,19 +1,43 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import RedArrowRight from '../../assets/icons/red_arrow_right.svg';
 import MyButton from '../components/Buttons/MyButton';
 import MyInputField from '../components/MyInputField';
+import useTheme from '../hooks/useTheme';
 
 const Login = () => {
+  const { typography } = useTheme();
+  const navigation: any = useNavigation();
+
+  const styles = StyleSheet.create({
+    container: {
+      padding: 20,
+    },
+    headerText: {
+      fontSize: typography.size['3XL'],
+      fontFamily: 'Poppins Bold',
+      marginBottom: 20,
+      color: '#222',
+    },
+    signupForm: {
+      marginTop: 20,
+      gap: 10,
+    },
+    formGroup: {
+      gap: 5,
+    },
+    label: {
+      fontFamily: 'Poppins Medium',
+      fontSize: typography.size.S,
+      color: '#222',
+    },
+  });
+
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>Sign up</Text>
+      <Text style={styles.headerText}>Login</Text>
       <View style={styles.signupForm}>
-        <View style={styles.formGroup}>
-          <Text style={styles.label}>Name</Text>
-          <MyInputField placeholder="Name" />
-        </View>
-
         <View style={styles.formGroup}>
           <Text style={styles.label}>Email</Text>
           <MyInputField placeholder="Email" />
@@ -25,6 +49,7 @@ const Login = () => {
         </View>
 
         <TouchableOpacity
+          onPress={() => navigation.navigate('ForgotPassword')}
           style={{
             display: 'flex',
             flexDirection: 'row',
@@ -36,15 +61,15 @@ const Login = () => {
           <Text
             style={{
               fontFamily: 'Poppins Medium',
-              fontSize: 14,
+              fontSize: typography.size.S,
               color: '#222',
             }}>
-            Already have an account?
+            Forgot your password?
           </Text>
           <RedArrowRight width={24} height={24} />
         </TouchableOpacity>
         <MyButton
-          title="Sign Up"
+          title="Login"
           btnStyle={{
             marginTop: 18,
           }}
@@ -52,30 +77,6 @@ const Login = () => {
       </View>
     </View>
   );
-};
-
-const styles = {
-  container: {
-    padding: 20,
-  },
-  headerText: {
-    fontSize: 34,
-    fontFamily: 'Poppins Bold',
-    marginBottom: 20,
-    color: '#222',
-  },
-  signupForm: {
-    marginTop: 20,
-    gap: 10,
-  },
-  formGroup: {
-    gap: 5,
-  },
-  label: {
-    fontFamily: 'Poppins Medium',
-    fontSize: 14,
-    color: '#222',
-  },
 };
 
 export default Login;

@@ -1,12 +1,50 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import RedArrowRight from '../../assets/icons/red_arrow_right.svg';
 import MyButton from '../components/Buttons/MyButton';
 import MyInputField from '../components/MyInputField';
+import useTheme from '../hooks/useTheme';
 
 const Signup = () => {
   const navigation: any = useNavigation();
+  const { typography } = useTheme();
+
+  const styles = StyleSheet.create({
+    container: {
+      padding: 20,
+    },
+    headerText: {
+      fontSize: typography.size['3XL'],
+      fontFamily: 'Poppins Bold',
+      marginBottom: 20,
+      color: '#222',
+    },
+    signupForm: {
+      marginTop: 20,
+      gap: 10,
+    },
+    formGroup: {
+      gap: 5,
+    },
+    label: {
+      fontFamily: 'Poppins Medium',
+      fontSize: typography.size.S,
+      color: '#222',
+    },
+    link: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      gap: 4,
+      marginVertical: 10,
+    },
+    btn: {
+      marginTop: 18,
+    },
+  });
+
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Sign up</Text>
@@ -28,57 +66,21 @@ const Signup = () => {
 
         <TouchableOpacity
           onPress={() => navigation.navigate('Login')}
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            gap: 4,
-            marginVertical: 10,
-          }}>
+          style={styles.link}>
           <Text
             style={{
               fontFamily: 'Poppins Medium',
-              fontSize: 14,
+              fontSize: typography.size.S,
               color: '#222',
             }}>
             Already have an account?
           </Text>
           <RedArrowRight width={24} height={24} />
         </TouchableOpacity>
-        <MyButton
-          title="Sign Up"
-          btnStyle={{
-            marginTop: 18,
-          }}
-        />
+        <MyButton title="Sign Up" btnStyle={styles.btn} />
       </View>
     </View>
   );
-};
-
-const styles = {
-  container: {
-    padding: 20,
-  },
-  headerText: {
-    fontSize: 34,
-    fontFamily: 'Poppins Bold',
-    marginBottom: 20,
-    color: '#222',
-  },
-  signupForm: {
-    marginTop: 20,
-    gap: 10,
-  },
-  formGroup: {
-    gap: 5,
-  },
-  label: {
-    fontFamily: 'Poppins Medium',
-    fontSize: 14,
-    color: '#222',
-  },
 };
 
 export default Signup;
