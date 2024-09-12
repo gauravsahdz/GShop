@@ -17,4 +17,11 @@ export default [
       "@typescript-eslint/no-require-imports": "off"
     }
   },
+  {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  }
 ];
