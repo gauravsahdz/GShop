@@ -1,3 +1,5 @@
+import ProductCard from '@components/Cards/ProductCard';
+import useTheme from '@hooks/useTheme';
 import React from 'react';
 import {
   ScrollView,
@@ -6,8 +8,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import useTheme from '../../hooks/useTheme';
-import ProductCard from '../Cards/ProductCard';
 
 const data = [
   {

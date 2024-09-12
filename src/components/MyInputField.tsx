@@ -1,6 +1,6 @@
+import useTheme from '@hooks/useTheme';
 import React from 'react';
 import { TextInput } from 'react-native';
-import useTheme from '../hooks/useTheme';
 
 type MyInputFieldProps = {
   placeholder?: string;

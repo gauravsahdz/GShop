@@ -1,6 +1,6 @@
+import colors from '@styles/colors';
+import { typography } from '@styles/typography';
 import React, { createContext, ReactNode } from 'react';
-import colors from '../styles/colors';
-import { typography } from '../styles/typography';
 
 export const ThemeContext = createContext(
   {} as {

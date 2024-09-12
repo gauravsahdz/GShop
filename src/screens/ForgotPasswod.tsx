@@ -1,8 +1,8 @@
+import MyButton from '@components/Buttons/MyButton';
+import MyInputField from '@components/MyInputField';
+import useTheme from '@hooks/useTheme';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import MyButton from '../components/Buttons/MyButton';
-import MyInputField from '../components/MyInputField';
-import useTheme from '../hooks/useTheme';
 
 const ForgotPassword = () => {
   const { typography } = useTheme();

@@ -1,3 +1,5 @@
+import ChevronRight from '@assets/icons/chevron_right.svg';
+import useTheme from '@hooks/useTheme';
 import React from 'react';
 import {
   Image,
@@ -7,8 +9,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import ChevronRight from '../../assets/icons/chevron_right.svg';
-import useTheme from '../hooks/useTheme';
 
 type MenuItem = {
   title: string;

@@ -1,6 +1,6 @@
+import useTheme from '@hooks/useTheme';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import useTheme from '../../hooks/useTheme';
 
 type MyButtonProps = {
   title: string;

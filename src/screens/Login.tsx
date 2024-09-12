@@ -1,10 +1,10 @@
+import RedArrowRight from '@assets/icons/red_arrow_right.svg';
+import MyButton from '@components/Buttons/MyButton';
+import MyInputField from '@components/MyInputField';
+import useTheme from '@hooks/useTheme';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import RedArrowRight from '../../assets/icons/red_arrow_right.svg';
-import MyButton from '../components/Buttons/MyButton';
-import MyInputField from '../components/MyInputField';
-import useTheme from '../hooks/useTheme';
 
 const Login = () => {
   const { typography } = useTheme();

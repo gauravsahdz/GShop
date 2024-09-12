@@ -3,12 +3,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
+import ThemeProvider from '@context/ThemeProvider';
+import Tabs from '@navigators/TabsNavigator';
+import ForgotPassword from '@screens/ForgotPasswod';
+import Login from '@screens/Login';
+import Signup from '@screens/Signup';
 import { SafeAreaView, StatusBar } from 'react-native';
-import ThemeProvider from './src/context/ThemeProvider';
-import Tabs from './src/navigators/TabsNavigator';
-import ForgotPassword from './src/screens/ForgotPasswod';
-import Login from './src/screens/Login';
-import Signup from './src/screens/Signup';
 
 const Stack = createNativeStackNavigator();
 

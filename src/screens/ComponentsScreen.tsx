@@ -1,13 +1,13 @@
+import HeartOutline from '@assets/icons/Heart_Outline.svg';
+import Bottomsheet from '@components/BottomSheet';
+import MyButton from '@components/Buttons/MyButton';
+import RoundButton from '@components/Buttons/RoundButton';
+import CategoryCard from '@components/Cards/CategoryCard';
+import ProductCard from '@components/Cards/ProductCard';
+import Chip from '@components/Chip';
+import useTheme from '@hooks/useTheme';
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
-import HeartOutline from '../../assets/icons/Heart_Outline.svg';
-import BottomSheet from '../components/BottomSheet';
-import MyButton from '../components/Buttons/MyButton';
-import RoundButton from '../components/Buttons/RoundButton';
-import CategoryCard from '../components/Cards/CategoryCard';
-import ProductCard from '../components/Cards/ProductCard';
-import Chip from '../components/Chip';
-import useTheme from '../hooks/useTheme';
 
 const data = {
   title: 'Product 1',
@@ -44,9 +44,9 @@ const ComponentsScreen = () => {
         }}
         onPress={onPressMe}
       />
-      <BottomSheet isVisible={isVisible}>
+      <Bottomsheet isVisible={isVisible}>
         <Text>Hi there</Text>
-      </BottomSheet>
+      </Bottomsheet>
       <Chip label="Chip" />
       <ProductCard props={data} />
       <CategoryCard />

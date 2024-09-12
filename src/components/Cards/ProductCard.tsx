@@ -1,9 +1,9 @@
+import HeartOutline from '@assets/icons/Heart_Outline.svg';
+import StarIcon from '@assets/icons/Star.svg';
+import RoundButton from '@components/Buttons/RoundButton';
+import useTheme from '@hooks/useTheme';
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import HeartOutline from '../../../assets/icons/Heart_Outline.svg';
-import StarIcon from '../../../assets/icons/Star.svg';
-import useTheme from '../../hooks/useTheme';
-import RoundButton from '../Buttons/RoundButton';
 
 type ProductCardProps = {
   props: {

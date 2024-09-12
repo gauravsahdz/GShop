@@ -1,16 +1,15 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
-import Bag from '../screens/Bag';
-import ComponentsScreen from '../screens/ComponentsScreen';
-import Home from '../screens/Home';
-import Profile from '../screens/Profile';
-
-import BottomProfileIcon from '../../assets/icons/bottom_account.svg';
-import BottomBag from '../../assets/icons/bottom_bag.svg';
-import BottomFavoritesIcon from '../../assets/icons/bottom_favorites.svg';
-import BottomHomeIcon from '../../assets/icons/bottom_home.svg';
-import BottomCartIcon from '../../assets/icons/bottom_shopping_cart.svg';
+import BottomProfileIcon from '@assets/icons/bottom_account.svg';
+import BottomBag from '@assets/icons/bottom_bag.svg';
+import BottomFavoritesIcon from '@assets/icons/bottom_favorites.svg';
+import BottomHomeIcon from '@assets/icons/bottom_home.svg';
+import BottomCartIcon from '@assets/icons/bottom_shopping_cart.svg';
+import Bag from '@screens/Bag';
+import ComponentsScreen from '@screens/ComponentsScreen';
+import Home from '@screens/Home';
+import Profile from '@screens/Profile';
 
 const Tab = createBottomTabNavigator();
 
