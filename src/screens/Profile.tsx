@@ -45,7 +45,7 @@ const menus: MenuItem[] = [
     title: 'Log out',
     subtitle: 'Logout from the app',
     onPress: navigation => {
-      navigation.navigate('Login');
+      navigation.navigate('Auth', { screen: 'Login' });
     },
   },
 ];

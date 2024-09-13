@@ -62,7 +62,14 @@ const data = [
   },
 ];
 
-const NewSection = () => {
+type SectionProps = {
+  title: string;
+  subtitle: string;
+  actionBtn?: () => void;
+  actionBtnTitle: string;
+};
+
+const Section = ({ title, subtitle, actionBtnTitle }: SectionProps) => {
   const { typography, colors } = useTheme();
 
   const styles = StyleSheet.create({
@@ -105,11 +112,11 @@ const NewSection = () => {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.infoSection}>
-          <Text style={styles.headerText}>New Section</Text>
-          <Text style={styles.subText}>You&apos;ve never seen it before!</Text>
+          <Text style={styles.headerText}>{title}</Text>
+          <Text style={styles.subText}>{subtitle}</Text>
         </View>
         <TouchableOpacity style={styles.btn}>
-          <Text style={styles.btnText}>View all</Text>
+          <Text style={styles.btnText}>{actionBtnTitle}</Text>
         </TouchableOpacity>
       </View>
 
@@ -127,4 +134,4 @@ const NewSection = () => {
   );
 };
 
-export default NewSection;
+export default Section;

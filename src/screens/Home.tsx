@@ -1,5 +1,5 @@
 import BannerSection from '@components/Home/BannerSection';
-import NewSection from '@components/Home/NewSection';
+import Section from '@components/Home/Section';
 import React from 'react';
 import { ScrollView } from 'react-native';
 
@@ -7,7 +7,16 @@ const Home = () => {
   return (
     <ScrollView>
       <BannerSection />
-      <NewSection />
+      <Section
+        title="New"
+        subtitle="You’ve never seen it before!"
+        actionBtnTitle="View all"
+      />
+      <Section
+        title="Sale"
+        subtitle="Super summer sale"
+        actionBtnTitle="View all"
+      />
     </ScrollView>
   );
 };

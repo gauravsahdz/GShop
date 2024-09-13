@@ -1,19 +1,21 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
+import { ChevronLeftIcon, MagnifyingGlassIcon } from '@assets/icons';
 import BottomProfileIcon from '@assets/icons/bottom_account.svg';
 import BottomBag from '@assets/icons/bottom_bag.svg';
 import BottomFavoritesIcon from '@assets/icons/bottom_favorites.svg';
 import BottomHomeIcon from '@assets/icons/bottom_home.svg';
 import BottomCartIcon from '@assets/icons/bottom_shopping_cart.svg';
 import Bag from '@screens/Bag';
+import Categories from '@screens/Categories/Categories';
 import ComponentsScreen from '@screens/ComponentsScreen';
 import Home from '@screens/Home';
 import Profile from '@screens/Profile';
 
 const Tab = createBottomTabNavigator();
 
-const Tabs = () => {
+const TabsStackNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -47,14 +49,18 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Shop"
-        component={Profile}
+        name="Categories"
+        component={Categories}
         options={{
           tabBarLabel: 'Shop',
           tabBarIcon: ({ color, size }) => (
             <BottomCartIcon width={size} height={size} fill={color} />
           ),
-          headerShown: false,
+          headerTitleAlign: 'center',
+          headerLeft: () => <ChevronLeftIcon />,
+          headerRight: () => <MagnifyingGlassIcon />,
+          headerLeftContainerStyle: { paddingLeft: 15 },
+          headerRightContainerStyle: { paddingRight: 15 },
         }}
       />
       <Tab.Screen
@@ -94,4 +100,4 @@ const Tabs = () => {
   );
 };
 
-export default Tabs;
+export default TabsStackNavigator;
