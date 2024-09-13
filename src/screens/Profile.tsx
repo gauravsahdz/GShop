@@ -139,7 +139,7 @@ const Profile = ({ navigation }: ProfileProps) => {
                 menu.onPress(navigation);
               }
             }}>
-            <View style={styles.menu}>
+            <View>
               <Text style={styles.menuTitle}>{menu.title}</Text>
               <Text style={styles.menuSubtitle}>{menu.subtitle}</Text>
             </View>
