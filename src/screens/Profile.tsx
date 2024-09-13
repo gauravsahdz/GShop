@@ -1,4 +1,4 @@
-import ChevronRight from '@assets/icons/chevron_right.svg';
+import { ChevronRightIcon } from '@assets/icons';
 import useTheme from '@hooks/useTheme';
 import React from 'react';
 import {
@@ -143,7 +143,7 @@ const Profile = ({ navigation }: ProfileProps) => {
               <Text style={styles.menuTitle}>{menu.title}</Text>
               <Text style={styles.menuSubtitle}>{menu.subtitle}</Text>
             </View>
-            <ChevronRight width={24} height={24} fill="#666" />
+            <ChevronRightIcon width={24} height={24} fill="#666" />
           </TouchableOpacity>
         ))}
       </View>

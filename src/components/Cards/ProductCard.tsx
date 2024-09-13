@@ -1,5 +1,4 @@
-import HeartOutline from '@assets/icons/Heart_Outline.svg';
-import StarIcon from '@assets/icons/Star.svg';
+import { HeartOutlineIcon, StarIcon } from '@assets/icons';
 import RoundButton from '@components/Buttons/RoundButton';
 import useTheme from '@hooks/useTheme';
 import React from 'react';
@@ -56,7 +55,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
         }}
       />
       <RoundButton
-        icon={<HeartOutline width={24} height={24} />}
+        icon={<HeartOutlineIcon width={24} height={24} />}
         btnStyle={{
           position: 'absolute',
           top: -20,

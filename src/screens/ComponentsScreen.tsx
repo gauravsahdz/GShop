@@ -1,4 +1,4 @@
-import HeartOutline from '@assets/icons/Heart_Outline.svg';
+import { HeartOutlineIcon } from '@assets/icons';
 import Bottomsheet from '@components/BottomSheet';
 import MyButton from '@components/Buttons/MyButton';
 import RoundButton from '@components/Buttons/RoundButton';
@@ -50,7 +50,7 @@ const ComponentsScreen = () => {
       <Chip label="Chip" />
       <ProductCard props={data} />
       <CategoryCard />
-      <RoundButton icon={<HeartOutline width={24} height={24} />} />
+      <RoundButton icon={<HeartOutlineIcon width={24} height={24} />} />
     </View>
   );
 };

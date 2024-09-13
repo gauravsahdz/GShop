@@ -1,4 +1,4 @@
-import RedArrowRight from '@assets/icons/red_arrow_right.svg';
+import { RedArrowRightIcon } from '@assets/icons';
 import MyButton from '@components/Buttons/MyButton';
 import MyInputField from '@components/MyInputField';
 import useTheme from '@hooks/useTheme';
@@ -66,7 +66,7 @@ const Login = () => {
             }}>
             Forgot your password?
           </Text>
-          <RedArrowRight width={24} height={24} />
+          <RedArrowRightIcon width={24} height={24} />
         </TouchableOpacity>
         <MyButton
           title="Login"
