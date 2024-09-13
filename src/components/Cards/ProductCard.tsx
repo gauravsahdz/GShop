@@ -18,7 +18,7 @@ type ProductCardProps = {
 };
 
 const ProductCard = ({ props, style }: ProductCardProps) => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
   return (
     <View
       style={{
@@ -32,7 +32,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
           position: 'absolute',
           padding: 6,
           zIndex: 1,
-          backgroundColor: '#DB3022',
+          backgroundColor: colors.primary,
           borderRadius: 29,
           top: 5,
           left: 5,
@@ -41,7 +41,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
           style={{
             fontFamily: 'Poppins SemiBold',
             fontSize: typography.size.XS,
-            color: 'white',
+            color: colors.white,
           }}>
           {-(props.price / props.oldPrice) * 100}%
         </Text>
@@ -61,7 +61,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
           top: -20,
           right: 5,
           padding: 5,
-          backgroundColor: 'white',
+          backgroundColor: colors.white,
           borderRadius: 29,
         }}
       />
@@ -79,7 +79,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
             style={{
               fontFamily: 'Poppins Regular',
               fontSize: typography.size.XXS,
-              color: '#9B9B9B',
+              color: colors.gray,
             }}>
             ({props.totalRatings})
           </Text>
@@ -88,7 +88,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
           style={{
             fontFamily: 'Poppins Regular',
             fontSize: typography.size.XS,
-            color: '#9B9B9B',
+            color: colors.gray,
           }}>
           {props.category}
         </Text>
@@ -96,7 +96,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
           style={{
             fontFamily: 'Poppins SemiBold',
             fontSize: typography.size.M,
-            color: '#222222',
+            color: colors.black,
           }}>
           {props.title}
         </Text>
@@ -105,7 +105,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
             style={{
               fontFamily: 'Poppins Medium',
               fontSize: typography.size.S,
-              color: '#9B9B9B',
+              color: colors.gray,
               textDecorationLine: 'line-through',
             }}>
             {props.oldPrice}$
@@ -114,7 +114,7 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
             style={{
               fontFamily: 'Poppins Medium',
               fontSize: typography.size.S,
-              color: '#DB3022',
+              color: colors.primary,
             }}>
             {props.price}$
           </Text>

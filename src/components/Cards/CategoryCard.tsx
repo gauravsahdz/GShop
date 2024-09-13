@@ -3,12 +3,12 @@ import React from 'react';
 import { Image, Text, View } from 'react-native';
 
 const CategoryCard = () => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
 
   return (
     <View
       style={{
-        backgroundColor: '#FFFFFF',
+        backgroundColor: colors.white,
         borderRadius: 8,
         width: 343,
         height: 100,
@@ -20,7 +20,7 @@ const CategoryCard = () => {
         style={{
           fontFamily: 'Poppins SemiBold',
           fontSize: typography.size.L,
-          color: '#222222',
+          color: colors.black,
           marginLeft: 23,
         }}>
         Category

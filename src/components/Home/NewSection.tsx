@@ -63,7 +63,7 @@ const data = [
 ];
 
 const NewSection = () => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
 
   const styles = StyleSheet.create({
     container: {
@@ -81,12 +81,12 @@ const NewSection = () => {
     headerText: {
       fontSize: typography.size.XL,
       fontFamily: 'Poppins Bold',
-      color: '#222',
+      color: colors.shadow,
     },
     subText: {
       fontSize: typography.size.XS,
       fontFamily: 'Poppins Regular',
-      color: '#9B9B9B',
+      color: colors.gray,
     },
     btn: {
       padding: 8,
@@ -94,7 +94,7 @@ const NewSection = () => {
     btnText: {
       fontSize: typography.size.XS,
       fontFamily: 'Poppins Regular',
-      color: '#222222',
+      color: colors.black,
     },
     layout: {
       marginTop: 16,

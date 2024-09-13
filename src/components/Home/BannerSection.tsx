@@ -4,7 +4,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
 const BannerSection = () => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
 
   const styles = StyleSheet.create({
     bannerSection: {
@@ -19,7 +19,7 @@ const BannerSection = () => {
       left: 0,
       right: 0,
       height: '30%',
-      backgroundColor: 'black',
+      backgroundColor: colors.black,
       opacity: 0.4,
     },
     overlay: {
@@ -29,7 +29,7 @@ const BannerSection = () => {
       right: 20,
     },
     bannerText: {
-      color: '#fff',
+      color: colors.white,
       fontSize: typography.size['5XL'],
       fontFamily: 'Poppins Bold',
       marginBottom: 10,

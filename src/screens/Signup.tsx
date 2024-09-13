@@ -8,7 +8,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Signup = () => {
   const navigation: any = useNavigation();
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
 
   const styles = StyleSheet.create({
     container: {
@@ -18,7 +18,7 @@ const Signup = () => {
       fontSize: typography.size['3XL'],
       fontFamily: 'Poppins Bold',
       marginBottom: 20,
-      color: '#222',
+      color: colors.shadow,
     },
     signupForm: {
       marginTop: 20,
@@ -30,7 +30,7 @@ const Signup = () => {
     label: {
       fontFamily: 'Poppins Medium',
       fontSize: typography.size.S,
-      color: '#222',
+      color: colors.shadow,
     },
     link: {
       display: 'flex',
@@ -71,7 +71,7 @@ const Signup = () => {
             style={{
               fontFamily: 'Poppins Medium',
               fontSize: typography.size.S,
-              color: '#222',
+              color: colors.shadow,
             }}>
             Already have an account?
           </Text>

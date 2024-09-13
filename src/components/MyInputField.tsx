@@ -9,7 +9,7 @@ type MyInputFieldProps = {
 const MyInputField = ({
   placeholder = 'Enter your name',
 }: MyInputFieldProps) => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
 
   return (
     <TextInput
@@ -17,19 +17,19 @@ const MyInputField = ({
         fontFamily: 'Poppins Medium',
         fontSize: typography.size.S,
         elevation: 1,
-        shadowColor: '#000',
+        shadowColor: colors.shadow,
         shadowOffset: {
           width: 0,
           height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        backgroundColor: '#fff',
+        backgroundColor: colors.white,
         borderRadius: 10,
         padding: 10,
       }}
       placeholder={placeholder}
-      placeholderTextColor="#A0A0A0"
+      placeholderTextColor={colors.placeholder}
     />
   );
 };

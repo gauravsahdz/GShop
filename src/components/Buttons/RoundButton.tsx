@@ -1,3 +1,4 @@
+import useTheme from '@hooks/useTheme';
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
@@ -8,6 +9,7 @@ type MyButtonProps = {
 };
 
 const RoundButton = ({ icon, onPress, btnStyle }: MyButtonProps) => {
+  const { colors } = useTheme();
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
       <View
@@ -16,9 +18,9 @@ const RoundButton = ({ icon, onPress, btnStyle }: MyButtonProps) => {
           justifyContent: 'center',
           height: 36,
           width: 36,
-          backgroundColor: 'white',
+          backgroundColor: colors.lightGrey,
           borderRadius: 24,
-          shadowColor: '#000',
+          shadowColor: colors.shadow,
           elevation: 3,
           ...btnStyle,
         }}>

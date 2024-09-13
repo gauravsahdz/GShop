@@ -1,3 +1,4 @@
+import useTheme from '@hooks/useTheme';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
@@ -8,11 +9,12 @@ type ChipProps = {
 };
 
 const Chip = ({ label, chipStyle, textStyle }: ChipProps) => {
+  const { colors } = useTheme();
   return (
     <TouchableOpacity activeOpacity={0.7}>
       <View
         style={{
-          backgroundColor: '#DB3022',
+          backgroundColor: colors.primary,
           borderRadius: 29,
           padding: 8,
           width: 100,

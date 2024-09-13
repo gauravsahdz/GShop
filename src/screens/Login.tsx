@@ -7,7 +7,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Login = () => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
   const navigation: any = useNavigation();
 
   const styles = StyleSheet.create({
@@ -18,7 +18,7 @@ const Login = () => {
       fontSize: typography.size['3XL'],
       fontFamily: 'Poppins Bold',
       marginBottom: 20,
-      color: '#222',
+      color: colors.shadow,
     },
     signupForm: {
       marginTop: 20,
@@ -30,7 +30,7 @@ const Login = () => {
     label: {
       fontFamily: 'Poppins Medium',
       fontSize: typography.size.S,
-      color: '#222',
+      color: colors.shadow,
     },
   });
 
@@ -62,7 +62,7 @@ const Login = () => {
             style={{
               fontFamily: 'Poppins Medium',
               fontSize: typography.size.S,
-              color: '#222',
+              color: colors.shadow,
             }}>
             Forgot your password?
           </Text>

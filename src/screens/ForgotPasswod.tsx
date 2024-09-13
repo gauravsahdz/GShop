@@ -5,7 +5,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const ForgotPassword = () => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
 
   const styles = StyleSheet.create({
     container: {
@@ -15,7 +15,7 @@ const ForgotPassword = () => {
       fontSize: typography.size['3XL'],
       fontFamily: 'Poppins Bold',
       marginBottom: 20,
-      color: '#222',
+      color: colors.shadow,
     },
     info: {
       fontSize: typography.size.S,
@@ -32,7 +32,7 @@ const ForgotPassword = () => {
     label: {
       fontFamily: 'Poppins Medium',
       fontSize: typography.size.S,
-      color: '#222',
+      color: colors.shadow,
     },
   });
 

@@ -55,7 +55,7 @@ type ProfileProps = {
 };
 
 const Profile = ({ navigation }: ProfileProps) => {
-  const { typography } = useTheme();
+  const { typography, colors } = useTheme();
 
   const styles = StyleSheet.create({
     container: {
@@ -66,12 +66,12 @@ const Profile = ({ navigation }: ProfileProps) => {
       fontSize: typography.size['3XL'],
       marginBottom: 10,
       fontFamily: 'Poppins Bold',
-      color: '#222',
+      color: colors.shadow,
       paddingLeft: 14,
     },
     menuTitle: {
       fontSize: typography.size.M,
-      color: '#222',
+      color: colors.shadow,
       fontFamily: 'Poppins SemiBold',
     },
     menuSubtitle: {
@@ -114,7 +114,7 @@ const Profile = ({ navigation }: ProfileProps) => {
             style={{
               fontSize: typography.size.L,
               fontFamily: 'Poppins SemiBold',
-              color: '#222',
+              color: colors.shadow,
             }}>
             John Doe
           </Text>
