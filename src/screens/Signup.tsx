@@ -1,6 +1,7 @@
 import { RedArrowRightIcon } from '@assets/icons';
 import MyButton from '@components/Buttons/MyButton';
 import MyInputField from '@components/MyInputField';
+import SocialLogin from '@components/SocialLogin';
 import useTheme from '@hooks/useTheme';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
@@ -13,6 +14,8 @@ const Signup = () => {
   const styles = StyleSheet.create({
     container: {
       padding: 20,
+      flex: 1,
+      justifyContent: 'space-between',
     },
     headerText: {
       fontSize: typography.size['3XL'],
@@ -47,37 +50,45 @@ const Signup = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>Sign up</Text>
-      <View style={styles.signupForm}>
-        <View style={styles.formGroup}>
-          <Text style={styles.label}>Name</Text>
-          <MyInputField placeholder="Name" />
-        </View>
+      <View>
+        <Text style={styles.headerText}>Sign up</Text>
+        <View style={styles.signupForm}>
+          <View style={styles.formGroup}>
+            <Text style={styles.label}>Name</Text>
+            <MyInputField placeholder="Name" />
+          </View>
 
-        <View style={styles.formGroup}>
-          <Text style={styles.label}>Email</Text>
-          <MyInputField placeholder="Email" />
-        </View>
+          <View style={styles.formGroup}>
+            <Text style={styles.label}>Email</Text>
+            <MyInputField placeholder="Email" />
+          </View>
 
-        <View style={styles.formGroup}>
-          <Text style={styles.label}>Password</Text>
-          <MyInputField placeholder="Password" />
-        </View>
+          <View style={styles.formGroup}>
+            <Text style={styles.label}>Password</Text>
+            <MyInputField placeholder="Password" />
+          </View>
 
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Login')}
-          style={styles.link}>
-          <Text
-            style={{
-              fontFamily: 'Poppins Medium',
-              fontSize: typography.size.S,
-              color: colors.shadow,
-            }}>
-            Already have an account?
-          </Text>
-          <RedArrowRightIcon width={24} height={24} />
-        </TouchableOpacity>
-        <MyButton title="Sign Up" btnStyle={styles.btn} />
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Login')}
+            style={styles.link}>
+            <Text
+              style={{
+                fontFamily: 'Poppins Medium',
+                fontSize: typography.size.S,
+                color: colors.shadow,
+              }}>
+              Already have an account?
+            </Text>
+            <RedArrowRightIcon width={24} height={24} />
+          </TouchableOpacity>
+          <MyButton title="Sign Up" btnStyle={styles.btn} />
+        </View>
+      </View>
+      <View
+        style={{
+          marginBottom: 80,
+        }}>
+        <SocialLogin title="Or sign up with social account" />
       </View>
     </View>
   );

@@ -5,9 +5,10 @@ import RoundButton from '@components/Buttons/RoundButton';
 import CategoryCard from '@components/Cards/CategoryCard';
 import ProductCard from '@components/Cards/ProductCard';
 import Chip from '@components/Chip';
+import SocialLogin from '@components/SocialLogin';
 import useTheme from '@hooks/useTheme';
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 
 const data = {
   title: 'Product 1',
@@ -28,12 +29,12 @@ const ComponentsScreen = () => {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
+    <ScrollView
+      contentContainerStyle={{
         padding: 10,
+        flex: 1,
         gap: 10,
+        alignItems: 'center',
       }}>
       <MyButton
         title="Button"
@@ -51,7 +52,8 @@ const ComponentsScreen = () => {
       <ProductCard props={data} />
       <CategoryCard />
       <RoundButton icon={<HeartOutlineIcon width={24} height={24} />} />
-    </View>
+      <SocialLogin />
+    </ScrollView>
   );
 };
 
