@@ -1,5 +1,5 @@
 import ProductCard from '@components/Cards/ProductCard';
-import useTheme from '@hooks/useTheme';
+import useThemedStyles from '@hooks/useThemedStyles';
 import React from 'react';
 import {
   ScrollView,
@@ -70,43 +70,7 @@ type SectionProps = {
 };
 
 const Section = ({ title, subtitle, actionBtnTitle }: SectionProps) => {
-  const { typography, colors } = useTheme();
-
-  const styles = StyleSheet.create({
-    container: {
-      padding: 16,
-    },
-    header: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
-    infoSection: {
-      flex: 1,
-    },
-    headerText: {
-      fontSize: typography.size.XL,
-      fontFamily: 'Poppins Bold',
-      color: colors.shadow,
-    },
-    subText: {
-      fontSize: typography.size.XS,
-      fontFamily: 'Poppins Regular',
-      color: colors.gray,
-    },
-    btn: {
-      padding: 8,
-    },
-    btnText: {
-      fontSize: typography.size.XS,
-      fontFamily: 'Poppins Regular',
-      color: colors.black,
-    },
-    layout: {
-      marginTop: 16,
-    },
-  });
+  const styles: any = useThemedStyles(themedStyles);
 
   return (
     <ScrollView style={styles.container}>
@@ -132,6 +96,44 @@ const Section = ({ title, subtitle, actionBtnTitle }: SectionProps) => {
       </ScrollView>
     </ScrollView>
   );
+};
+
+const themedStyles = (theme: any) => {
+  return StyleSheet.create({
+    container: {
+      padding: 16,
+    },
+    header: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    infoSection: {
+      flex: 1,
+    },
+    headerText: {
+      fontSize: theme.typography.size.XL,
+      fontFamily: 'Poppins Bold',
+      color: theme.colors.shadow,
+    },
+    subText: {
+      fontSize: theme.typography.size.XS,
+      fontFamily: 'Poppins Regular',
+      color: theme.colors.gray,
+    },
+    btn: {
+      padding: 8,
+    },
+    btnText: {
+      fontSize: theme.typography.size.XS,
+      fontFamily: 'Poppins Regular',
+      color: theme.colors.black,
+    },
+    layout: {
+      marginTop: 16,
+    },
+  });
 };
 
 export default Section;

@@ -1,8 +1,10 @@
 import CategoryCard from '@components/Cards/CategoryCard';
+import useThemedStyles from '@hooks/useThemedStyles';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const WomenCategory = () => {
+  const styles: any = useThemedStyles(themedStyles);
   return (
     <ScrollView
       contentContainerStyle={styles.container}
@@ -20,30 +22,32 @@ const WomenCategory = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    gap: 20,
-  },
-  offerBanner: {
-    backgroundColor: 'red',
-    padding: 10,
-    alignItems: 'center',
-    borderRadius: 10,
-    width: '97%',
-  },
-  offerTitle: {
-    color: 'white',
-    fontSize: 24,
-    fontFamily: 'Poppins SemiBold',
-  },
-  offerSubtitle: {
-    color: 'white',
-    fontSize: 14,
-    fontFamily: 'Poppins Medium',
-  },
-});
+const themedStyles = () => {
+  return StyleSheet.create({
+    container: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      gap: 20,
+    },
+    offerBanner: {
+      backgroundColor: 'red',
+      padding: 10,
+      alignItems: 'center',
+      borderRadius: 10,
+      width: '97%',
+    },
+    offerTitle: {
+      color: 'white',
+      fontSize: 24,
+      fontFamily: 'Poppins SemiBold',
+    },
+    offerSubtitle: {
+      color: 'white',
+      fontSize: 14,
+      fontFamily: 'Poppins Medium',
+    },
+  });
+};
 
 export default WomenCategory;

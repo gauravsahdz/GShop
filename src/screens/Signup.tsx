@@ -2,51 +2,14 @@ import { RedArrowRightIcon } from '@assets/icons';
 import MyButton from '@components/Buttons/MyButton';
 import MyInputField from '@components/MyInputField';
 import SocialLogin from '@components/SocialLogin';
-import useTheme from '@hooks/useTheme';
+import useThemedStyles from '@hooks/useThemedStyles';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Signup = () => {
   const navigation: any = useNavigation();
-  const { typography, colors } = useTheme();
-
-  const styles = StyleSheet.create({
-    container: {
-      padding: 20,
-      flex: 1,
-      justifyContent: 'space-between',
-    },
-    headerText: {
-      fontSize: typography.size['3XL'],
-      fontFamily: 'Poppins Bold',
-      marginBottom: 20,
-      color: colors.shadow,
-    },
-    signupForm: {
-      marginTop: 20,
-      gap: 10,
-    },
-    formGroup: {
-      gap: 5,
-    },
-    label: {
-      fontFamily: 'Poppins Medium',
-      fontSize: typography.size.S,
-      color: colors.shadow,
-    },
-    link: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'flex-end',
-      alignItems: 'center',
-      gap: 4,
-      marginVertical: 10,
-    },
-    btn: {
-      marginTop: 18,
-    },
-  });
+  const styles: any = useThemedStyles(themedStyles);
 
   return (
     <View style={styles.container}>
@@ -71,12 +34,7 @@ const Signup = () => {
           <TouchableOpacity
             onPress={() => navigation.navigate('Login')}
             style={styles.link}>
-            <Text
-              style={{
-                fontFamily: 'Poppins Medium',
-                fontSize: typography.size.S,
-                color: colors.shadow,
-              }}>
+            <Text style={styles.alreadyHaveAccount}>
               Already have an account?
             </Text>
             <RedArrowRightIcon width={24} height={24} />
@@ -92,6 +50,50 @@ const Signup = () => {
       </View>
     </View>
   );
+};
+
+const themedStyles = (theme: any) => {
+  return StyleSheet.create({
+    container: {
+      padding: 20,
+      flex: 1,
+      justifyContent: 'space-between',
+    },
+    headerText: {
+      fontSize: theme.typography.size['3XL'],
+      fontFamily: 'Poppins Bold',
+      marginBottom: 20,
+      color: theme.colors.shadow,
+    },
+    signupForm: {
+      marginTop: 20,
+      gap: 10,
+    },
+    formGroup: {
+      gap: 5,
+    },
+    label: {
+      fontFamily: 'Poppins Medium',
+      fontSize: theme.typography.size.S,
+      color: theme.colors.shadow,
+    },
+    link: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      gap: 4,
+      marginVertical: 10,
+    },
+    alreadyHaveAccount: {
+      fontFamily: 'Poppins Medium',
+      fontSize: theme.typography.size.S,
+      color: theme.colors.shadow,
+    },
+    btn: {
+      marginTop: 18,
+    },
+  });
 };
 
 export default Signup;

@@ -1,6 +1,6 @@
-import useTheme from '@hooks/useTheme';
+import useThemedStyles from '@hooks/useThemedStyles';
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 type MyButtonProps = {
   title: string;
@@ -9,30 +9,36 @@ type MyButtonProps = {
 };
 
 const MyButton = ({ title, onPress, btnStyle }: MyButtonProps) => {
-  const { typography, colors } = useTheme();
+  const styles: any = useThemedStyles(themedStyles);
 
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.9}>
       <View
         style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: 25,
-          backgroundColor: colors.primary,
-          height: 48,
+          ...styles.container,
           ...btnStyle,
         }}>
-        <Text
-          style={{
-            color: 'white',
-            fontFamily: 'Poppins Medium',
-            fontSize: typography.size.S,
-          }}>
-          {title}
-        </Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
     </TouchableOpacity>
   );
+};
+
+const themedStyles = (theme: any) => {
+  return StyleSheet.create({
+    container: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 25,
+      backgroundColor: theme.colors.primary,
+      height: 48,
+    },
+    title: {
+      color: 'white',
+      fontFamily: 'Poppins Medium',
+      fontSize: theme.typography.size.S,
+    },
+  });
 };
 
 export default MyButton;

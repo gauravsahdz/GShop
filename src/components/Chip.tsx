@@ -1,4 +1,4 @@
-import useTheme from '@hooks/useTheme';
+import useThemedStyles from '@hooks/useThemedStyles';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
@@ -9,22 +9,17 @@ type ChipProps = {
 };
 
 const Chip = ({ label, chipStyle, textStyle }: ChipProps) => {
-  const { colors } = useTheme();
+  const styles: any = useThemedStyles(themedStyles);
   return (
     <TouchableOpacity activeOpacity={0.7}>
       <View
         style={{
-          backgroundColor: colors.primary,
-          borderRadius: 29,
-          padding: 8,
-          width: 100,
-          alignItems: 'center',
+          ...styles.container,
           ...chipStyle,
         }}>
         <Text
           style={{
-            fontFamily: 'Poppins Regular',
-            color: 'white',
+            ...styles.label,
             ...textStyle,
           }}>
           {label}
@@ -32,6 +27,22 @@ const Chip = ({ label, chipStyle, textStyle }: ChipProps) => {
       </View>
     </TouchableOpacity>
   );
+};
+
+const themedStyles = (theme: any) => {
+  return {
+    container: {
+      backgroundColor: theme.colors.primary,
+      borderRadius: 29,
+      padding: 8,
+      width: 100,
+      alignItems: 'center',
+    },
+    label: {
+      fontFamily: 'Poppins Regular',
+      color: theme.colors.white,
+    },
+  };
 };
 
 export default Chip;

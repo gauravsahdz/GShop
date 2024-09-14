@@ -1,3 +1,4 @@
+import useThemedStyles from '@hooks/useThemedStyles';
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import {
@@ -20,6 +21,7 @@ const TABS = ['Women', 'Men', 'Kids'];
 const screenWidth = Dimensions.get('window').width;
 
 const Categories = () => {
+  const styles: any = useThemedStyles(themedStyles);
   const navigation: any = useNavigation();
   const [activeTab, setActiveTab] = useState<string>('Women');
 
@@ -77,41 +79,43 @@ const Categories = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  tabs: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    position: 'relative',
-  },
-  button: {
-    width: screenWidth / TABS.length,
-    alignItems: 'center',
-    paddingVertical: 10,
-  },
-  buttonText: {
-    color: 'black',
-    fontSize: 16,
-    fontFamily: 'Poppins SemiBold',
-  },
-  activeText: {
-    color: 'red',
-  },
-  indicator: {
-    position: 'absolute',
-    top: 50,
-    height: 3,
-    width: screenWidth / TABS.length,
-    backgroundColor: 'red',
-  },
-  content: {
-    flex: 1,
-    padding: 20,
-  },
-});
+const themedStyles = () => {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    tabs: {
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+      position: 'relative',
+    },
+    button: {
+      width: screenWidth / TABS.length,
+      alignItems: 'center',
+      paddingVertical: 10,
+    },
+    buttonText: {
+      color: 'black',
+      fontSize: 16,
+      fontFamily: 'Poppins SemiBold',
+    },
+    activeText: {
+      color: 'red',
+    },
+    indicator: {
+      position: 'absolute',
+      top: 50,
+      height: 3,
+      width: screenWidth / TABS.length,
+      backgroundColor: 'red',
+    },
+    content: {
+      flex: 1,
+      padding: 20,
+    },
+  });
+};
 
 export default Categories;

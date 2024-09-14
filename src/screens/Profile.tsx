@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from '@assets/icons';
-import useTheme from '@hooks/useTheme';
+import useThemedStyles from '@hooks/useThemedStyles';
 import React from 'react';
 import {
   Image,
@@ -55,40 +55,7 @@ type ProfileProps = {
 };
 
 const Profile = ({ navigation }: ProfileProps) => {
-  const { typography, colors } = useTheme();
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 10,
-    },
-    headerText: {
-      fontSize: typography.size['3XL'],
-      marginBottom: 10,
-      fontFamily: 'Poppins Bold',
-      color: colors.shadow,
-      paddingLeft: 14,
-    },
-    menuTitle: {
-      fontSize: typography.size.M,
-      color: colors.shadow,
-      fontFamily: 'Poppins SemiBold',
-    },
-    menuSubtitle: {
-      fontSize: typography.size.XS,
-      color: '#666',
-      fontFamily: 'Poppins Regular',
-    },
-    menu: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      borderBottomWidth: 0.5,
-      borderBottomColor: '#e0e0e0',
-      paddingVertical: 18,
-      paddingLeft: 15,
-    },
-  });
+  const styles: any = useThemedStyles(themedStyles);
 
   return (
     <ScrollView style={styles.container}>
@@ -110,21 +77,8 @@ const Profile = ({ navigation }: ProfileProps) => {
             alignItems: 'flex-start',
             justifyContent: 'center',
           }}>
-          <Text
-            style={{
-              fontSize: typography.size.L,
-              fontFamily: 'Poppins SemiBold',
-              color: colors.shadow,
-            }}>
-            John Doe
-          </Text>
-          <Text
-            style={{
-              fontSize: typography.size.S,
-              fontFamily: 'Poppins Medium',
-            }}>
-            john@gmail.com
-          </Text>
+          <Text style={styles.userName}>John Doe</Text>
+          <Text style={styles.email}>john@gmail.com</Text>
         </View>
       </View>
 
@@ -149,6 +103,51 @@ const Profile = ({ navigation }: ProfileProps) => {
       </View>
     </ScrollView>
   );
+};
+
+const themedStyles = (theme: any) => {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 10,
+    },
+    headerText: {
+      fontSize: theme.typography.size['3XL'],
+      marginBottom: 10,
+      fontFamily: 'Poppins Bold',
+      color: theme.colors.shadow,
+      paddingLeft: 14,
+    },
+    userName: {
+      fontSize: theme.typography.size.L,
+      fontFamily: 'Poppins SemiBold',
+      color: theme.colors.shadow,
+    },
+    email: {
+      fontSize: theme.typography.size.S,
+      fontFamily: 'Poppins Medium',
+      color: theme.colors.gray,
+    },
+    menuTitle: {
+      fontSize: theme.typography.size.M,
+      color: theme.colors.shadow,
+      fontFamily: 'Poppins SemiBold',
+    },
+    menuSubtitle: {
+      fontSize: theme.typography.size.XS,
+      color: '#666',
+      fontFamily: 'Poppins Regular',
+    },
+    menu: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      borderBottomWidth: 0.5,
+      borderBottomColor: '#e0e0e0',
+      paddingVertical: 18,
+      paddingLeft: 15,
+    },
+  });
 };
 
 export default Profile;

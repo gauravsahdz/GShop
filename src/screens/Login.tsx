@@ -2,40 +2,14 @@ import { RedArrowRightIcon } from '@assets/icons';
 import MyButton from '@components/Buttons/MyButton';
 import MyInputField from '@components/MyInputField';
 import SocialLogin from '@components/SocialLogin';
-import useTheme from '@hooks/useTheme';
+import useThemedStyles from '@hooks/useThemedStyles';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Login = () => {
-  const { typography, colors } = useTheme();
+  const styles: any = useThemedStyles(themedStyles);
   const navigation: any = useNavigation();
-
-  const styles = StyleSheet.create({
-    container: {
-      padding: 20,
-      flex: 1,
-      justifyContent: 'space-between',
-    },
-    headerText: {
-      fontSize: typography.size['3XL'],
-      fontFamily: 'Poppins Bold',
-      marginBottom: 20,
-      color: colors.shadow,
-    },
-    signupForm: {
-      marginTop: 20,
-      gap: 10,
-    },
-    formGroup: {
-      gap: 5,
-    },
-    label: {
-      fontFamily: 'Poppins Medium',
-      fontSize: typography.size.S,
-      color: colors.shadow,
-    },
-  });
 
   return (
     <View style={styles.container}>
@@ -62,14 +36,7 @@ const Login = () => {
               gap: 4,
               marginVertical: 10,
             }}>
-            <Text
-              style={{
-                fontFamily: 'Poppins Medium',
-                fontSize: typography.size.S,
-                color: colors.shadow,
-              }}>
-              Forgot your password?
-            </Text>
+            <Text style={styles.forgotPassText}>Forgot your password?</Text>
             <RedArrowRightIcon width={24} height={24} />
           </TouchableOpacity>
           <MyButton
@@ -88,6 +55,39 @@ const Login = () => {
       </View>
     </View>
   );
+};
+
+const themedStyles = (theme: any) => {
+  return StyleSheet.create({
+    container: {
+      padding: 20,
+      flex: 1,
+      justifyContent: 'space-between',
+    },
+    headerText: {
+      fontSize: theme.typography.size['3XL'],
+      fontFamily: 'Poppins Bold',
+      marginBottom: 20,
+      color: theme.colors.shadow,
+    },
+    signupForm: {
+      marginTop: 20,
+      gap: 10,
+    },
+    formGroup: {
+      gap: 5,
+    },
+    label: {
+      fontFamily: 'Poppins Medium',
+      fontSize: theme.typography.size.S,
+      color: theme.colors.shadow,
+    },
+    forgotPassText: {
+      fontFamily: 'Poppins Medium',
+      fontSize: theme.typography.size.S,
+      color: theme.colors.shadow,
+    },
+  });
 };
 
 export default Login;
