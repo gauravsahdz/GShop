@@ -19,9 +19,10 @@ const CategoryCard = () => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
   return {
     container: {
-      backgroundColor: theme.colors.white,
+      backgroundColor: colors.white,
       borderRadius: 8,
       width: 343,
       height: 100,
@@ -30,9 +31,9 @@ const themedStyles = (theme: any) => {
       alignItems: 'center',
     },
     title: {
-      color: theme.colors.black,
+      color: colors.black,
       fontFamily: 'Poppins SemiBold',
-      fontSize: theme.typography.size.L,
+      fontSize: typography.size.L,
       marginLeft: 23,
     },
     image: {

@@ -21,6 +21,7 @@ const BannerSection = () => {
   );
 };
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
   return StyleSheet.create({
     bannerSection: {
       position: 'relative',
@@ -34,7 +35,7 @@ const themedStyles = (theme: any) => {
       left: 0,
       right: 0,
       height: '30%',
-      backgroundColor: theme.colors.black,
+      backgroundColor: colors.black,
       opacity: 0.4,
     },
     overlay: {
@@ -44,8 +45,8 @@ const themedStyles = (theme: any) => {
       right: 20,
     },
     bannerText: {
-      color: theme.colors.white,
-      fontSize: theme.typography.size['5XL'],
+      color: colors.white,
+      fontSize: typography.size['5XL'],
       fontFamily: 'Poppins Bold',
       marginBottom: 10,
     },

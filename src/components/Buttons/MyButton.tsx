@@ -25,18 +25,20 @@ const MyButton = ({ title, onPress, btnStyle }: MyButtonProps) => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
+
   return StyleSheet.create({
     container: {
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 25,
-      backgroundColor: theme.colors.primary,
+      backgroundColor: colors.primary,
       height: 48,
     },
     title: {
       color: 'white',
       fontFamily: 'Poppins Medium',
-      fontSize: theme.typography.size.S,
+      fontSize: typography.size.S,
     },
   });
 };

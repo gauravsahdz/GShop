@@ -33,15 +33,17 @@ const SocialLogin = ({
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
+
   return StyleSheet.create({
     container: {
       gap: 12,
     },
     title: {
       textAlign: 'center',
-      color: theme.colors.shadow,
+      color: colors.shadow,
       fontFamily: 'Poppins Medium',
-      fontSize: theme.typography.size.S,
+      fontSize: typography.size.S,
     },
     iconBox: {
       flex: 1,
@@ -54,11 +56,11 @@ const themedStyles = (theme: any) => {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: theme.colors.white,
+      backgroundColor: colors.white,
       paddingHorizontal: 34,
       paddingVertical: 28,
       borderRadius: 24,
-      shadowColor: theme.colors.shadow,
+      shadowColor: colors.shadow,
       elevation: 0.5,
     },
   });

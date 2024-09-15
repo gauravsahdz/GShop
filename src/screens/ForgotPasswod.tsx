@@ -32,18 +32,20 @@ const ForgotPassword = () => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
+
   return StyleSheet.create({
     container: {
       padding: 20,
     },
     headerText: {
-      fontSize: theme.typography.size['3XL'],
+      fontSize: typography.size['3XL'],
       fontFamily: 'Poppins Bold',
       marginBottom: 20,
-      color: theme.colors.shadow,
+      color: colors.shadow,
     },
     info: {
-      fontSize: theme.typography.size.S,
+      fontSize: typography.size.S,
       color: '#666',
       fontFamily: 'Poppins Medium',
     },
@@ -56,8 +58,8 @@ const themedStyles = (theme: any) => {
     },
     label: {
       fontFamily: 'Poppins Medium',
-      fontSize: theme.typography.size.S,
-      color: theme.colors.shadow,
+      fontSize: typography.size.S,
+      color: colors.shadow,
     },
   });
 };

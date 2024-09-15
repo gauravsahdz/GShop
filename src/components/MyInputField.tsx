@@ -21,24 +21,27 @@ const MyInputField = ({
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
+
   return StyleSheet.create({
     textInput: {
       fontFamily: 'Poppins Medium',
-      fontSize: theme.typography.size.S,
+      fontSize: typography.size.S,
       elevation: 1,
-      shadowColor: theme.colors.shadow,
+      shadowColor: colors.shadow,
       shadowOffset: {
         width: 0,
         height: 2,
       },
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
-      backgroundColor: theme.colors.white,
+      backgroundColor: colors.white,
       borderRadius: 10,
       padding: 10,
+      color: colors.shadow,
     },
     placeholder: {
-      color: theme.colors.gray,
+      color: colors.gray,
     },
   });
 };

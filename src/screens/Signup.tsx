@@ -53,6 +53,8 @@ const Signup = () => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
+
   return StyleSheet.create({
     container: {
       padding: 20,
@@ -60,10 +62,10 @@ const themedStyles = (theme: any) => {
       justifyContent: 'space-between',
     },
     headerText: {
-      fontSize: theme.typography.size['3XL'],
+      fontSize: typography.size['3XL'],
       fontFamily: 'Poppins Bold',
       marginBottom: 20,
-      color: theme.colors.shadow,
+      color: colors.shadow,
     },
     signupForm: {
       marginTop: 20,
@@ -74,8 +76,8 @@ const themedStyles = (theme: any) => {
     },
     label: {
       fontFamily: 'Poppins Medium',
-      fontSize: theme.typography.size.S,
-      color: theme.colors.shadow,
+      fontSize: typography.size.S,
+      color: colors.shadow,
     },
     link: {
       display: 'flex',
@@ -87,8 +89,8 @@ const themedStyles = (theme: any) => {
     },
     alreadyHaveAccount: {
       fontFamily: 'Poppins Medium',
-      fontSize: theme.typography.size.S,
-      color: theme.colors.shadow,
+      fontSize: typography.size.S,
+      color: colors.shadow,
     },
     btn: {
       marginTop: 18,

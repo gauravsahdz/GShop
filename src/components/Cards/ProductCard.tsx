@@ -54,9 +54,10 @@ const ProductCard = ({ props, style }: ProductCardProps) => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
   return {
     container: {
-      backgroundColor: theme.colors.white,
+      backgroundColor: colors.white,
       borderRadius: 10,
       padding: 1,
     },
@@ -64,15 +65,15 @@ const themedStyles = (theme: any) => {
       position: 'absolute',
       padding: 6,
       zIndex: 1,
-      backgroundColor: theme.colors.primary,
+      backgroundColor: colors.primary,
       borderRadius: 29,
       top: 5,
       left: 5,
     },
     discountText: {
       fontFamily: 'Poppins SemiBold',
-      fontSize: theme.typography.size.XS,
-      color: theme.colors.white,
+      fontSize: typography.size.XS,
+      color: colors.white,
     },
     image: {
       width: 148,
@@ -84,7 +85,7 @@ const themedStyles = (theme: any) => {
       top: -20,
       right: 5,
       padding: 5,
-      backgroundColor: theme.colors.white,
+      backgroundColor: colors.white,
       borderRadius: 29,
     },
     ratingBox: {
@@ -94,29 +95,29 @@ const themedStyles = (theme: any) => {
     },
     totalRatings: {
       fontFamily: 'Poppins Regular',
-      fontSize: theme.typography.size.XXS,
-      color: theme.colors.gray,
+      fontSize: typography.size.XXS,
+      color: colors.gray,
     },
     category: {
       fontFamily: 'Poppins Regular',
-      fontSize: theme.typography.size.XS,
-      color: theme.colors.gray,
+      fontSize: typography.size.XS,
+      color: colors.gray,
     },
     title: {
       fontFamily: 'Poppins SemiBold',
-      fontSize: theme.typography.size.M,
-      color: theme.colors.black,
+      fontSize: typography.size.M,
+      color: colors.black,
     },
     previousPriceText: {
       fontFamily: 'Poppins Medium',
-      fontSize: theme.typography.size.S,
-      color: theme.colors.gray,
+      fontSize: typography.size.S,
+      color: colors.gray,
       textDecorationLine: 'line-through',
     },
     priceText: {
       fontFamily: 'Poppins Medium',
-      fontSize: theme.typography.size.S,
-      color: theme.colors.primary,
+      fontSize: typography.size.S,
+      color: colors.primary,
     },
   };
 };

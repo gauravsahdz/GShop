@@ -5,7 +5,6 @@ import RoundButton from '@components/Buttons/RoundButton';
 import CategoryCard from '@components/Cards/CategoryCard';
 import ProductCard from '@components/Cards/ProductCard';
 import Chip from '@components/Chip';
-import SocialLogin from '@components/SocialLogin';
 import useThemedStyles from '@hooks/useThemedStyles';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text } from 'react-native';
@@ -38,21 +37,20 @@ const ComponentsScreen = () => {
       <ProductCard props={data} />
       <CategoryCard />
       <RoundButton icon={<HeartOutlineIcon width={24} height={24} />} />
-      <SocialLogin />
     </ScrollView>
   );
 };
 
 const themedStyles = (theme: any) => {
+  const { colors } = theme;
   return StyleSheet.create({
     container: {
       padding: 10,
-      flex: 1,
       gap: 10,
       alignItems: 'center',
     },
     btnStyle: {
-      backgroundColor: theme.colors.primary,
+      backgroundColor: colors.primary,
       height: 48,
       width: 343,
     },

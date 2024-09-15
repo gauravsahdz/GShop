@@ -25,15 +25,17 @@ const RoundButton = ({ icon, onPress, btnStyle }: MyButtonProps) => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors } = theme;
+
   return {
     container: {
       alignItems: 'center',
       justifyContent: 'center',
       height: 36,
       width: 36,
-      backgroundColor: theme.colors.lightGrey,
+      backgroundColor: colors.lightGrey,
       borderRadius: 24,
-      shadowColor: theme.colors.shadow,
+      shadowColor: colors.shadow,
       elevation: 3,
     },
   };

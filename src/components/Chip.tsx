@@ -30,9 +30,10 @@ const Chip = ({ label, chipStyle, textStyle }: ChipProps) => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors } = theme;
   return {
     container: {
-      backgroundColor: theme.colors.primary,
+      backgroundColor: colors.primary,
       borderRadius: 29,
       padding: 8,
       width: 100,
@@ -40,7 +41,7 @@ const themedStyles = (theme: any) => {
     },
     label: {
       fontFamily: 'Poppins Regular',
-      color: theme.colors.white,
+      color: colors.white,
     },
   };
 };

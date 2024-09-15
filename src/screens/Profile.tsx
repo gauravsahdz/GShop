@@ -106,35 +106,37 @@ const Profile = ({ navigation }: ProfileProps) => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
+
   return StyleSheet.create({
     container: {
       flex: 1,
       padding: 10,
     },
     headerText: {
-      fontSize: theme.typography.size['3XL'],
+      fontSize: typography.size['3XL'],
       marginBottom: 10,
       fontFamily: 'Poppins Bold',
-      color: theme.colors.shadow,
+      color: colors.shadow,
       paddingLeft: 14,
     },
     userName: {
-      fontSize: theme.typography.size.L,
+      fontSize: typography.size.L,
       fontFamily: 'Poppins SemiBold',
-      color: theme.colors.shadow,
+      color: colors.shadow,
     },
     email: {
-      fontSize: theme.typography.size.S,
+      fontSize: typography.size.S,
       fontFamily: 'Poppins Medium',
-      color: theme.colors.gray,
+      color: colors.gray,
     },
     menuTitle: {
-      fontSize: theme.typography.size.M,
-      color: theme.colors.shadow,
+      fontSize: typography.size.M,
+      color: colors.shadow,
       fontFamily: 'Poppins SemiBold',
     },
     menuSubtitle: {
-      fontSize: theme.typography.size.XS,
+      fontSize: typography.size.XS,
       color: '#666',
       fontFamily: 'Poppins Regular',
     },

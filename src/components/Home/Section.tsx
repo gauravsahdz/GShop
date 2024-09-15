@@ -99,6 +99,8 @@ const Section = ({ title, subtitle, actionBtnTitle }: SectionProps) => {
 };
 
 const themedStyles = (theme: any) => {
+  const { colors, typography } = theme;
+
   return StyleSheet.create({
     container: {
       padding: 16,
@@ -113,22 +115,22 @@ const themedStyles = (theme: any) => {
       flex: 1,
     },
     headerText: {
-      fontSize: theme.typography.size.XL,
+      fontSize: typography.size.XL,
       fontFamily: 'Poppins Bold',
-      color: theme.colors.shadow,
+      color: colors.shadow,
     },
     subText: {
-      fontSize: theme.typography.size.XS,
+      fontSize: typography.size.XS,
       fontFamily: 'Poppins Regular',
-      color: theme.colors.gray,
+      color: colors.gray,
     },
     btn: {
       padding: 8,
     },
     btnText: {
-      fontSize: theme.typography.size.XS,
+      fontSize: typography.size.XS,
       fontFamily: 'Poppins Regular',
-      color: theme.colors.black,
+      color: colors.black,
     },
     layout: {
       marginTop: 16,
